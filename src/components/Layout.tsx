@@ -46,7 +46,7 @@ export function Layout() {
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <aside className={open ? "sidebar open" : "sidebar"}>
+      <aside id="main-sidebar" className={open ? "sidebar open" : "sidebar"}>
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
           <span className="brand-mark">g</span>gather
           <span className="brand-dot">.</span>
@@ -119,6 +119,8 @@ export function Layout() {
           <button
             className="mobile-menu icon-button"
             aria-label="Open navigation"
+            aria-expanded={open}
+            aria-controls="main-sidebar"
             onClick={() => setOpen(true)}
           >
             <Menu />
